@@ -1,0 +1,40 @@
+*{font-family: 微软雅黑; padding: 0px; margin: 0px;}
+a{color: #fff;}
+a:hover,a:focus{color: #fff;text-decoration: none;}
+ul li{list-style: none;}
+
+
+
+
+			/*第一部分*/
+.header-common{height: 50px;background: #00ae66;position: relative;
+}
+.logo{width: 145px;height: 20px;position: absolute;left: 10px;top: 15px;
+}
+
+.options{text-align: center;}
+.options >ul{list-style: none; margin-left: 10px;}
+
+
+			/*第二部分*/
+.carousels{background: #f4f4f4;border: 1px solid #c5c5c5;}
+.carousels .item > img{width: 100%;}
+
+
+/*第三部分*/
+.A{border-bottom: 1px solid #dcdcdc; }
+.A ul{border-left: 1px solid #dcdcdc; margin-bottom: -1px;}
+.A ul li{text-align: center;}
+.A ul .a{font-size: 18px;}
+
+.B{border-bottom: 1px solid #dcdcdc; }
+.B ul{border-left: 1px solid #dcdcdc; margin-top: 8px;}
+.B ul li{text-align: center;}
+
+
+
+/*第四部分*/
+.C{border-bottom: 1px solid #dcdcdc;height: 50px;line-height: 50px;margin: 0 -15px; }
+.C .orange{color: orange;}
+.C .blue{color: blue;}
+.C .green{color: green;}

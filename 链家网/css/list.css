@@ -1,0 +1,40 @@
+*{font-family: 微软雅黑;}
+a{color: #fff;}
+a:hover,a:focus{color: #fff;text-decoration: none;}
+ul li{list-style: none;}
+
+
+
+			/*第一部分*/
+.header-common{height: 50px;background: #00ae66;position: relative;
+}
+.logo{width: 145px;height: 20px;position: absolute;left: 10px;top: 15px;
+}
+
+.options{text-align: center;}
+.options >ul{list-style: none; margin-left: 10px;}
+			
+			/*第二  三部分*/
+.row-three{margin: 10px 0px;}
+.CD li{float: left;border: 1px solid #d3d3d3; height: 30px;line-height: 30px;
+	text-align: center;font-size: 12px;padding: 0 -10px;
+}
+
+			
+			/*第四部分*/
+.hot-rooms{margin-top: 50px;}
+.hpt-rooms >.hot-list > .media{padding: 14px 11px;border-bottom: 1px solid #c5c5c5;}
+.hpt-rooms >.hot-list >.media-heading{font-weight: bolder;margin-bottom: 0;}
+.hpt-rooms >.hot-list .media-body > p{font-size: 12px;margin: 0;}
+.hpt-rooms >.hot-list .media-body > label{margin-top: 4px;display: inline-block;}
+
+
+
+
+
+
+
+
+
+
+ 				

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>旋转缩放</title>
+</head>
+
+<body>
+<canvas width="500px" height="500px"></canvas>
+<script>
+	var canvas=document.getElementsByTagName("canvas")[0];
+	var mc=canvas.getContext("2d");
+	
+	mc.translate(150,20);
+	
+	
+	
+	for(var i=0;i<50;i++){
+		mc.translate(50,25);//图形坐标
+		mc.rotate(30*Math.PI/180);//旋转角度
+		mc.scale(0.9,0.9);//旋转缩小（宽，高）
+		mc.fillStyle="rgba(255,100,100,0.5)";
+		//填充颜色（红，绿，蓝，透明度）
+		mc.fillRect(0,0,100,50);//实心矩形	
+	}
+	
+</script>
+</body>
+</html>

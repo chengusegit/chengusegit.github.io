@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>红绿灯</title>
+	<style type="text/css">
+		canvas{background: skyblue;}
+	</style>
+</head>
+<body>
+	<canvas width="300" height="500" id="MyCanvas"></canvas>
+	<script type="text/javascript">
+
+		var color1 = "gray";
+		var color2 = "gray";
+		var color3 = "gray";
+		var text = "";
+
+	//1、获取canvas元素对象
+		var MyCanvas = document.getElementById("MyCanvas");
+	//2、获取canvas的上下文对象
+		var mc = MyCanvas.getContext("2d");
+
+		function color(){
+
+			mc.clearRect(0,0,300,500);//清除画布
+
+			var date = new Date();
+			var s = date.getSeconds();//获取时间
+
+			if (s%3 == 0) {
+				color1 = "red";
+				color2 = "gray";
+				color3 = "gray";
+				text = "红灯停！";
+			}else if (s%3 ==1) {
+				color1 = "gray";
+				color2 = "yellow";
+				color3 = "gray";
+				text = "黄灯亮了等一等！";
+			}else if (s%3 == 2) {
+				color1 = "gray";
+				color2 = "gray";
+				color3 = "green";
+				text = "绿灯行！";
+			}
+			deng();
+		}
+
+		setInterval("color()",10);
+
+
+		function deng(){
+			mc.beginPath();
+			mc.fillStyle = "black";//矩形中的填充色
+			mc.fillRect(50,50,100,300);//开始坐标  长度和宽度
+			mc.fill();//绘制
+			mc.closePath();//闭合路径
+
+			mc.beginPath();
+			mc.fillStyle = color1;// 填充色
+			mc.arc(100,100,40,360*Math.PI/180,false)
+			mc.fill();//绘制实心圆
+			mc.closePath();
+
+			mc.beginPath();
+			mc.fillStyle = color2;// 填充色
+			mc.arc(100,200,40,360*Math.PI/180,false)
+			mc.fill();//绘制实心圆
+			mc.closePath();
+
+			mc.beginPath();
+			mc.fillStyle = color3;// 填充色
+			mc.arc(100,300,40,360*Math.PI/180,false)
+			mc.fill();//绘制实心圆
+			mc.closePath();
+
+			mc.beginPath();
+			mc.strokeStyle = "blue";//设置线条颜色
+			mc.lineWidth = 1;//设置线条粗细
+			mc.font = "30px 微软雅黑"//是一个属性
+			mc.strokeText(text,50,400);//“内容” 坐标
+		}
+
+	</script>
+</body>
+</html>

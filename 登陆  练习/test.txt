@@ -1,0 +1,39 @@
+﻿完成login.png
+
+要求：1.登录面板半透明
+	  2.“登录”两个字有阴影
+	  3.邮箱输入框可验证
+	  4.验证码完成，验证码思路整理如下：
+	  	a.用canvas去做
+	  	b.背景颜色随机生成，背景颜色可以用rgba形式。
+	  	eg:rgba(255,255,255,0.3);括号中的数字由随机数产生
+	  	c.文本内容随机产生，可以将26个大写字母，小写字母以及数字共同组成一个数组，然后由随机数当索引去选择每次要展示的是哪一个
+	  5.登录按钮的背景由CSS样式修饰,提示：background:"linear-gradient(..)"。
+	  	linear-gradient修饰简介：
+	  	linear-gradient([ [ <angle> | to <side-or-corner> ] ,]? <color-stop>[, <color-stop>]+)
+	  		
+	  		<side-or-corner> = [left | right] || [top | bottom]
+
+			<color-stop> = <color> [ <length> | <percentage> ]?
+			下述值用来表示渐变的方向，可以使用角度或者关键字来设置：
+
+			<angle>：
+			    用角度值指定渐变的方向（或角度）。
+				to left：
+				    设置渐变为从右到左。相当于: 270deg
+				to right：
+				    设置渐变从左到右。相当于: 90deg
+				to top：
+				    设置渐变从下到上。相当于: 0deg
+				to bottom：
+				    设置渐变从上到下。相当于: 180deg。这是默认值，等同于留空不写。
+
+			<color-stop> 用于指定渐变的起止颜色：
+
+			<color>：
+			    指定颜色。
+			<length>：
+			    用长度值指定起止色位置。不允许负值
+			<percentage>：
+			    用百分比指定起止色位置。
+	6.当邮箱和验证码都输入正确后跳转到index.html页面

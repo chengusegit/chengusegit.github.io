@@ -1,0 +1,80 @@
+*{margin: 0; padding: 0;}
+
+		/*首页*/
+
+.header{
+	height: 254px;background: url("../images/bg1.jpg") no-repeat;
+	-webkit-background-size:cover;background-size:cover;position: relative;
+
+}
+		/* 第一行 */
+.header >.row-one{margin: 12px -15px;}
+.header >.row-one .label{background: #3d3d3d;padding: 5px 10px;border-radius: 10px;
+	margin-top: 10px;display: inline-block;	
+}
+.header >.row-one .options{text-align: center;}
+.header >.row-one .options >ul{list-style: none; margin-left: 10px;}
+		/* 第二行 */
+.header> .row-two{color: #ffffff;text-align: center;}
+.header> .row-two >h1{margin-top: 0;}
+.header> .row-two >h3{font-weight: 200;}
+		/* 第三行 */
+.header >.row-three{position: absolute;bottom: 12px;}
+
+		/*第二部分*/
+.buys{margin: 0;height: 120px;border-bottom: 1px solid #c5c5c5;}
+.buys ul{width: 51px;margin:20px auto 0;text-align: center;}
+.buys ul > li:list-child{margin-top: 8px;}
+
+
+		/* 第三部分  轮播 */
+
+.carousels{padding: 14px 0 10px;background: #f4f4f4;border: 1px solid #c5c5c5;}
+.carousels .item > img{width: 100%;}
+
+
+
+		/*第四部分   房源*/
+
+.hpt-rooms >.hot-header{height: 48px;line-height: 48px;padding-left: 15px;
+	border-bottom: 1px solid #c5c5c5;
+}
+.hpt-rooms >.hot-list > .media{padding: 14px 11px;border-bottom: 1px solid #c5c5c5;}
+.hpt-rooms >.hot-list >.media-heading{font-weight: bolder;margin-bottom: 0;}
+.hpt-rooms >.hot-list .media-body > p{font-size: 12px;margin: 0;}
+.hpt-rooms >.hot-list .media-body > label{margin-top: 4px;display: inline-block;}
+
+
+
+
+
+
+
+/* 登录页面“10-self” */
+.header-common{height: 50px;background: #00ae66;position: relative;
+}
+.logo{width: 145px;height: 20px;position: absolute;left: 10px;top: 15px;
+}
+
+.options{text-align: center;}
+.options >ul{list-style: none; margin-left: 10px;}
+.options >ul a{color: #fff;}
+
+		/*第二部分*/
+
+.log{
+	height: 130px;background: url("../images/10-bj.png") no-repeat;
+	-webkit-background-size:cover;background-size:cover;position: relative;
+}
+.log >.log-1{width: 52px;height: 52px;
+	background: url("../images/10-bj-1.png") no-repeat;margin: 10px auto 0px;
+}
+.log >.log-2{width: 200px; margin: 20px auto 10px;}
+.log >.log-2 > a > button{background: #39ac6a;border: 1px solid #fff;color: #fff;width: 80px;
+	text-align: center;margin-left: 10px;
+}
+
+
+		/* 第三部分 */
+.bq{border-bottom: 1px solid #a6a5a5;}
+.bq-1{height: 30px;border-bottom: 1px solid #e2e2e2;font-size: 18px;margin-top: 10px;}

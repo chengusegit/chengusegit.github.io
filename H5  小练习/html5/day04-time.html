@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>time</title>
+	<style type="text/css">
+		canvas{background: skyblue;}
+	</style>
+</head>
+<body>
+	<canvas width="500" height="500" id="MyCanvas"></canvas>
+	<script type="text/javascript">
+	//1、获取canvas元素对象
+		var MyCanvas = document.getElementById("MyCanvas");
+	//2、获取canvas的上下文对象
+		var mc = MyCanvas.getContext("2d");
+
+	function getX(){
+			mc.clearRect(0,0,500,500);//清除画布
+
+
+		var date=new Date();
+		var hour=date.getHours();
+		var minute=date.getMinutes();
+		var second=date.getSeconds();
+
+
+	//3、画表盘
+
+		mc.beginPath();
+		mc.strokeStyle = "black";
+		mc.lineWidth = 2;
+		mc.arc(250,250,150,360*Math.PI/180,false);
+		mc.stroke();
+		mc.closePath();
+
+
+	//4、画刻度
+		/*mc.beginPath();
+		mc.lineWidth = 3;
+		mc.moveTo(250,100);
+		mc.lineTo(250,110);
+		mc.stroke();
+		mc.closePath();*/
+
+
+		//分刻度
+		
+		for (var i = 0; i <=60; i++) {	
+		
+			mc.save();//复制一份原图，产生一个空间
+			mc.translate(250,250);//设置旋转点
+			mc.rotate(6*i*Math.PI/180);
+
+			mc.beginPath();
+			mc.lineWidth = 3;
+			mc.moveTo(0,-150);
+			mc.lineTo(0,-140);
+			mc.stroke();
+			mc.closePath();
+
+			mc.restore();
+			
+		}
+
+		//时刻度
+		
+		for (var p = 0; p <=12; p++) {
+
+			mc.save();//复制一份原图，产生一个空间
+			mc.translate(250,250);//设置旋转点
+			mc.rotate(30*p*Math.PI/180);
+			
+			mc.beginPath();
+			mc.lineWidth = 5;
+			mc.moveTo(0,-150);
+			mc.lineTo(0,-130);
+			mc.stroke();
+			mc.closePath();
+
+			mc.restore();
+		
+		}
+
+		for (var i = 1; i <=12; i++) {	
+		
+				mc.save();//复制一份原图，产生一个空间
+				mc.translate(250,250);//设置旋转点
+				mc.rotate(i*30*Math.PI/180);
+
+				mc.beginPath();
+				mc.strokeStyle = "blue";//设置线条颜色
+				mc.lineWidth = 1;//设置线条粗细
+				mc.font = "20px 微软雅黑"//是一个属性
+				mc.fillText(i,-10,-105);//“内容” 坐标
+
+				mc.restore();
+			
+			}
+
+
+	//5、画指针
+		//时针
+		mc.save();
+		mc.translate(250,250);
+		mc.rotate(hour*30*Math.PI/180+minute*6*Math.PI/180/12);
+
+
+		mc.beginPath();
+		mc.lineWidth = 5;
+		mc.moveTo(0,0);
+		mc.lineTo(0,-80)
+		mc.stroke();
+		mc.closePath();
+		mc.restore();
+
+		//分针
+
+		mc.save();
+		mc.translate(250,250);
+		mc.rotate(minute*6*Math.PI/180+second*6/60*Math.PI/180);
+
+		mc.beginPath();
+		mc.lineWidth = 3;
+		mc.moveTo(0,0);
+		mc.lineTo(0,-100)
+		mc.stroke();
+		mc.closePath();
+		mc.restore();
+
+		//秒针
+		mc.save();
+		mc.translate(250,250);
+		mc.rotate(second*6*Math.PI/180);
+
+
+		mc.beginPath();
+		mc.strokeStyle = "red";
+		mc.lineWidth = 2;
+		mc.moveTo(0,10);
+		mc.lineTo(0,-90)
+		mc.stroke();
+		mc.closePath();
+		mc.restore();
+
+		//表心
+		mc.beginPath();
+		mc.fillStyle = "black";
+		mc.arc(250,250,5,360*Math.PI/180,false);
+		mc.fill();
+		mc.closePath();
+	}
+	setInterval("getX()",10);
+
+
+
+
+	</script>
+</body>
+</html>

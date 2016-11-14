@@ -1,0 +1,16 @@
+ul{list-style: none;}
+
+
+/*城市选择页面“9-city”*/
+.header-9{
+	height: 42px;background:#00ae66;
+	-webkit-background-size:cover;background-size:cover;
+}
+.header-9 > div{margin-top: 10px;font-size: 18px;margin-left: -10px;color: #fff;}
+.hui{height: 30px;background: #ebeaeb;color: #626262;font-size: 12px;padding: 6px 0 0 20px;}
+.D1{height: 40px;background: #fff;color: #626262;font-size: 12px;padding: 12px 0 0 20px;}
+ul li{border-bottom: 1px solid #d3d3d3;height: 50px;line-height: 50px;
+}
+
+
+

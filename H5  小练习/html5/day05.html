@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点菜</title>
+	<style type="text/css">
+		#left{width:500px;height: 600px;border: 2px dashed #add8e6;margin-right: 100px;float: left;}
+		ul li{list-style: none;margin-bottom: 20px;font-size: 18px;}
+		img{width: 80px;height: 80px;}
+		ul li:hover{
+		background-color:#09F;}
+		#right{width: 500px;height: 600px;border: 2px solid #90ee90;float: left;}
+		h3{font-size: 24px;}
+		#right_ul li{float: left;width: 90px;height: 100px;margin-right: 20px;}
+		
+	</style>
+</head>
+<body>
+	<div id="left">
+	<h3>今日菜单:</h3>
+		<ul id="left_ul">
+			<li draggable = "true" id="one" ondragstart="eat(event)">
+				<img id="one" src="../images/1.jpg">山楂炖蹄髈
+			</li>
+			<li draggable = "true" id="tow" ondragstart="eat(event)">
+				<img id="tow" src="../images/2.jpg">腊八粥
+			</li>
+			<li draggable = "true" id="three" ondragstart="eat(event)">
+				<img id="three" src="../images/3.jpg">银鱼蒸蛋
+			</li>
+			<li draggable = "true" id="four" ondragstart="eat(event)">
+				<img id="four" src="../images/4.jpg">梅花糕
+			</li>
+			<li draggable = "true" id="five" ondragstart="eat(event)">
+				<img id="five" src="../images/5.jpg">爱心蛋卷
+			</li>
+		</ul>
+	</div>
+	<div id="right">
+		<h3>点菜:</h3>
+		<ul id="right_ul" ></ul>
+	</div>
+
+	<script type="text/javascript">
+		function eat(e){
+			e.dataTransfer.setData("text/plain",e.target.id);
+		}
+
+		
+		//放到右边
+		var right = document.getElementById("right");
+		var right_ul = document.getElementById("right_ul");
+		right.addEventListener("drop",function(e){
+			var id = e.dataTransfer.getData("text/plain");
+			var c = document.getElementById(id);
+			right_ul.appendChild(c);
+
+			e.preventDefault();
+		    //在Firefox中阻止新页面的打开
+		   	e.stopPropagation();
+		},false);
+
+		
+
+		//放到左边
+		var left_ul = document.getElementById("left_ul");
+		left.addEventListener("drop",function(e){
+			var id = e.dataTransfer.getData("text/plain");
+			var c = document.getElementById(id);
+			left_ul.appendChild(c);
+
+			e.preventDefault();
+		    //在Firefox中阻止新页面的打开
+		   e.stopPropagation();
+		},false);
+
+		
+		document.ondragend =function(e){e.preventDefault();}
+		document.ondragover =function(e){e.preventDefault();}
+	</script>
+</body>
+</html>
